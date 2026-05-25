@@ -1,0 +1,387 @@
+/*
+
+"Dive Into HTML 5" stylesheet
+
+Copyright (c) 2009, Mark Pilgrim, All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+/* ============================================================
+   FONTS
+   ============================================================ */
+
+@font-face {
+  font-family: "Essays 1743";
+  src: url("f/Essays1743.eot?") format("eot"), url("f/Essays1743.woff") format("woff"), url("f/Essays1743.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-weight: bold;
+  src: url("f/Essays1743-bold.eot?") format("eot"), url("f/Essays1743-bold.woff") format("woff"), url("f/Essays1743-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  src: url("f/Essays1743-italic.eot?") format("eot"), url("f/Essays1743-italic.woff") format("woff"), url("f/Essays1743-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Essays1743-bold-italic.eot?") format("eot"), url("f/Essays1743-bold-italic.woff") format("woff"), url("f/Essays1743-bold-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alphabet of Children";
+  src: url("f/Alphabet-of-Children.eot?") format("eot"), url("f/Alphabet-of-Children.woff") format("woff"), url("f/Alphabet-of-Children.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  src: url("f/Libertine.eot?") format("eot"), url("f/Libertine.woff") format("woff"), url("f/Libertine.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-weight: bold;
+  src: url("f/Libertine-bold.eot?") format("eot"), url("f/Libertine-bold.woff") format("woff"), url("f/Libertine-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  src: url("f/Libertine-italic.eot?") format("eot"), url("f/Libertine-italic.woff") format("woff"), url("f/Libertine-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Libertine-bold-italic.eot?") format("eot"), url("f/Libertine-bold-italic.woff") format("woff"), url("f/Libertine-bold-italic.ttf") format("truetype");
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  --fs: 18px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+}
+body {
+  font-family: "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: var(--fs, 18px);
+  line-height: 1.556;
+  word-spacing: 0.1em;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-top: 52px;
+  padding-bottom: 2em;
+}
+
+.cover { float: right; }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+table { border-collapse: collapse; width: 100%; }
+table, th, td { border: 1px solid black; text-align: center; padding: 8px; }
+th { background-color: #d0d0d0; font-weight: bold; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+tr:hover { background-color: #e8e8e8; }
+
+pre, kbd, samp, code, var {
+  font: medium/1.75 Consolas, "Andale Mono", Monaco, "Liberation Mono", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", monospace;
+  word-spacing: 0;
+  letter-spacing: 0;
+}
+.a, .u, table.bc tbody td {
+  font: 100%/1 "Arial Unicode MS", FreeSerif, OpenSymbol, "DejaVu Sans", sans-serif;
+}
+.baa {
+  font: oblique 105% Constantia, Baskerville, Palatino, "Palatino Linotype", "URW Palladio L", serif;
+}
+.note { margin: 3.112em 4.94em; }
+.note span { display: block; float: left; font-size: 266.7%; line-height: 0.8; margin: 0 0.22em 0 -1.22em; }
+.ss span { display: block; text-align: center; border-top: 3px double; border-bottom: 3px double; }
+.c { font-size: medium; line-height: 1.75; margin: 1.75em 0; }
+.f:first-letter {
+  font-family: "Alphabet of Children";
+  font-size: 8.2em;
+  float: left;
+  margin-right: 0.02em;
+  line-height: 0.75;
+}
+p, ul, ol { font-size: var(--fs, 18px); margin: 1.556em 0; text-align: justify; }
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+
+.clear { clear: both; }
+.c, .a, #toc, form div { clear: both; text-align: center; }
+#toc ol, #toc li { list-style: none; margin-left: 0; padding-left: 0; }
+.a { font-size: xx-large; line-height: .875; text-shadow: 0 0 2px #667; }
+.pf, .fr { border: 1px solid; }
+.pf { margin: 1.75em 0; }
+.pf .inner {
+  min-height: 253px;
+  margin: 0 15px 0 0;
+  padding: 0 154px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_little_professor.png) bottom right no-repeat;
+}
+.pf .moneybags {
+  min-height: 245px;
+  margin: 0 15px 0 0;
+  padding: 0 190px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_bag_of_money.png) bottom right no-repeat;
+}
+.pf h4 { margin: 0; padding: 4px; background: black; color: white; }
+.ss { float: right; margin: 0 0 1.75em 1.75em; font-size: medium; }
+address, cite, dfn, var { font-style: normal; }
+sup { font-variant: small-caps; vertical-align: text-top; }
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+a { text-decoration: none; }
+a:link { color: FireBrick; border-bottom: 1px dotted; }
+a:visited { color: RosyBrown; border-bottom: 1px dotted; }
+a:link:hover, a:visited:hover { border-bottom: 1px solid; }
+.c a { color: inherit; }
+
+/* ============================================================
+   FIGURES
+   ============================================================ */
+
+.legend {
+  font: italic x-large/1.75 "Essays 1743", "Marker Felt", "Kristen ITC", "Viner Hand ITC", "Lucida Handwriting", Amienne, Boopee, "Segoe Print", "Times New Roman", serif;
+  text-shadow: 0 0 1px #667;
+  margin-left: 0.5em;
+  vertical-align: top;
+}
+.arrow { font-size: 200%; line-height: 0.3; vertical-align: sub; }
+.left { float: left; }
+.right { float: right; }
+.top { margin-bottom: 0.3em; display: block; }
+.bottom { display: block; margin-top: 0; margin-left: 2em; }
+
+/* ============================================================
+   CODE
+   ============================================================ */
+
+pre { padding-left: 3.5em; white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+pre.ib { padding: 0; }
+mark { display: inline-block; background: #ff8; border: 1px dotted #888; }
+.p { color: #667; }
+
+/* ============================================================
+   OVERRIDES
+   ============================================================ */
+
+li ol, .q, .v span { margin: 0; }
+code, var, samp { line-height: inherit !important; }
+
+/* ============================================================
+   HEADERS
+   ============================================================ */
+
+h1, h2, h3, h4, caption, thead th {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px #667;
+}
+h1 { font-size: 266.7%; line-height: 1.1; text-align: center; width: 100%; margin: 1.49em 0; }
+h2 { font-size: 210%; line-height: 1.3125; margin: 1.167em 0; text-align: center; clear: both; }
+h3 { font-size: x-large; line-height: 1.167; margin: 1.556em 0; text-align: center; }
+h1:before { content: "\2116" counter(h1) "."; }
+
+video { display: block; margin: 0 auto; }
+
+/* ============================================================
+   TABLES (compat)
+   ============================================================ */
+
+.bc, .st { width: 100%; border-collapse: collapse; }
+.bc tbody th, .bc thead th.l, tfoot td { text-align: left; }
+.bc thead th, .bc td { text-align: center; }
+tfoot { font-size: small; }
+.st { border: 1px solid; }
+.st th { text-align: left; font-weight: normal; }
+.st tr > th:first-child { padding-left: 5px; }
+.ho th { border-bottom: 1px solid; }
+.zebra { background: #eee; }
+
+/* ============================================================
+   ASTERISMS
+   ============================================================ */
+
+.rotatedFloralHeartBullet:after        { content: "\2767" }
+.triangularBullet:after                { content: "\2023" }
+.leftwardsWaveArrow:after              { content: "\219C" }
+.rightwardsWaveArrow:after             { content: "\219D" }
+.leftwardsSquiggleArrow:after          { content: " \21DC" }
+.rightwardsSquiggleArrow:after         { content: "\21DD" }
+.whiteRightPointingIndex:after         { content: "\261E" }
+.anticlockwiseTopSemicircleArrow:after { content: "\21B6" }
+.clockwiseTopSemicircleArrow:after     { content: "\21B7" }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+#cme-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #f5f0e8;
+  border-bottom: 1px solid #c8b89a;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  gap: 8px;
+}
+#cme-navbar .nav-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #5a2d0c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#cme-navbar .nav-select-wrap {
+  flex-shrink: 0;
+}
+#cme-navbar select {
+  font-size: 12px;
+  padding: 4px 4px;
+  border: 1px solid #c8b89a;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+#cme-navbar .nav-btns {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+#cme-navbar button {
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #c8b89a;
+  cursor: pointer;
+  background: #fff;
+  color: #333;
+  white-space: nowrap;
+  line-height: 1;
+}
+#cme-navbar button:hover { background: #e8dcc8; }
+
+/* ============================================================
+   DARK MODE  — applied to <html> so full viewport is covered
+   ============================================================ */
+
+html.dark {
+  background: #1a1a1a;
+  color-scheme: dark;
+}
+html.dark body {
+  background: #1a1a1a;
+  color: #e8e4d9;
+}
+html.dark #cme-navbar {
+  background: #222;
+  border-bottom-color: #444;
+}
+html.dark #cme-navbar .nav-title { color: #e8c87a; }
+html.dark #cme-navbar select { background: #2a2a2a; color: #e8e4d9; border-color: #555; }
+html.dark #cme-navbar button { background: #2a2a2a; color: #e8e4d9; border-color: #555; }
+html.dark #cme-navbar button:hover { background: #3a3a3a; }
+html.dark a:link { color: #e07070; }
+html.dark a:visited { color: #b08080; }
+html.dark h1, html.dark h2, html.dark h3, html.dark h4 { color: #e8e4d9; }
+html.dark table, html.dark th, html.dark td { border-color: #555; }
+html.dark th { background-color: #2e2e2e; color: #e8e4d9; }
+html.dark tr:nth-child(even) { background-color: #222; }
+html.dark tr:hover { background-color: #2a2a2a; }
+html.dark .pf, html.dark .fr { border-color: #555; }
+html.dark .pf .inner { background: #222 none; min-height: auto; padding-right: 1em; }
+html.dark .pf .moneybags { background: #222 none; min-height: auto; padding-right: 1em; }
+html.dark .pf h4 { background: #111; color: #e8e4d9; }
+html.dark mark { background: #4a4a00; border-color: #666; }
+html.dark .zebra { background: #252525; }
+html.dark .title, html.dark .number { background: #1a1a1a; }
+/* Only invert the math/figure images (they live under 33283-t/) */
+html.dark img[src*="33283-t"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  body {
+    max-width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: var(--fs, 16px);
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+  img { max-width: 100%; height: auto; }
+  h1 { font-size: 160%; }
+  h2 { font-size: 130%; }
+  p, ul, ol { font-size: var(--fs, 16px); }
+  .pf .inner, .pf .moneybags {
+    padding-right: 1em;
+    background-image: none;
+    min-height: auto;
+  }
+  .ss { float: none; margin: 1em 0; }
+  .cover { float: none; display: block; margin: 0 auto 1em; }
+  pre { padding-left: 1em; overflow-x: auto; }
+  .note { margin: 1.5em 1em; }
+  /* Navbar: hide the redundant title text, let select expand */
+  #cme-navbar .nav-title { display: none; }
+  #cme-navbar .nav-select-wrap { flex: 1; min-width: 0; }
+  #cme-navbar select { font-size: 12px; width: 100%; max-width: 100%; }
+  #cme-navbar button { font-size: 13px; padding: 5px 8px; }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To deliver you from the Preliminary Terrors | Calculus Made Easy</title>
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 1}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h1><br>To deliver you from the Preliminary Terrors</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>The preliminary terror, which chokes off most fifth-form
+boys from even attempting to learn how to
+calculate, can be abolished once for all by simply stating
+what is the meaning–in common-sense terms–of the
+two principal symbols that are used in calculating.
+
+<p>These dreadful symbols are:
+
+<p>(1) $d$ which merely means “a little bit of.”
+
+<p>Thus $dx$ means a little bit of $x$; or $du$ means a
+little bit of $u$. Ordinary mathematicians think it
+more polite to say “an element of,” instead of “a little
+bit of.” Just as you please. But you will find that
+these little bits (or elements) may be considered to be
+indefinitely small.
+
+<p>(2) $\int$ which is merely a long $S$, and may be called
+(if you like) “the sum of.”
+
+<p>Thus $\int dx$ means the sum of all the little bits
+of $x$; or $\int dt$ means the sum of all the little bits
+of $t$. Ordinary mathematicians call this symbol “the
+
+integral of.” Now any fool can see that if $x$ is
+considered as made up of a lot of little bits, each of
+which is called $dx$, if you add them all up together
+you get the sum of all the $dx$'s, (which is the same
+thing as the whole of $x$). The word “integral” simply
+means “the whole.” If you think of the duration
+of time for one hour, you may (if you like) think of
+it as cut up into $3600$ little bits called seconds. The
+whole of the $3600$ little bits added up together make
+one hour.
+
+<p>When you see an expression that begins with this
+terrifying symbol, you will henceforth know that it
+is put there merely to give you instructions that you
+are now to perform the operation (if you can) of
+totalling up all the little bits that are indicated by
+the symbols that follow.
+
+<p>That's all.
+<br>
+<hr>
+<a href="2.html">Next &rarr;</a><br>
+<a href="/">Main Page &uarr;</a><br>
+
+<script>
+(function() {
+  // Apply dark mode to <html> immediately — before any paint
+  if (localStorage.getItem('cme-dark') === '1') {
+    document.documentElement.classList.add('dark');
+  }
+
+  var pages = [["index.html","Home","Calculus Made Easy"],["prologue.html","Prologue","Prologue"],["1.html","I","To Deliver You From the Preliminary Terrors"],["2.html","II","On Different Degrees of Smallness"],["3.html","III","On Relative Growings"],["4.html","IV","Simplest Cases"],["5.html","V","Next Stage: What to do with Constants"],["6.html","VI","Sums, Differences, Products and Quotients"],["7.html","VII","Successive Differentiation"],["8.html","VIII","When Time Varies"],["9.html","IX","Introducing a Useful Dodge"],["10.html","X","Geometrical Meaning of Differentiation"],["11.html","XI","Maxima and Minima"],["12.html","XII","Curvature of Curves"],["13.html","XIII","Other Useful Dodges"],["14.html","XIV(a)","On true Compound Interest and the Law of Organic Growth"],["14b.html","XIV(b)","The Die-away Curve"],["15.html","XV","How to Deal with Sines and Cosines"],["16.html","XVI","Partial Differentiation"],["17.html","XVII","Integration"],["18.html","XVIII","Integrating as the Reverse of Differentiating"],["19.html","XIX","On Finding Areas by Integrating"],["20.html","XX","Dodges, Pitfalls, and Triumphs"],["21.html","XXI","Finding some Solutions"],["epilogue.html","Epilogue","Epilogue and Apologue"],["table.html","Table","Table of Standard Forms"]];
+  var cur = location.pathname.split('/').pop() || 'index.html';
+  if (!cur) cur = 'index.html';
+  var idx = pages.findIndex(function(p) { return p[0] === cur; });
+
+  function buildNav() {
+    var nav = document.createElement('div');
+    nav.id = 'cme-navbar';
+
+    // Chapter title on the left
+    var title = document.createElement('span');
+    title.className = 'nav-title';
+    title.textContent = idx >= 0 ? pages[idx][2] : 'Calculus Made Easy';
+    nav.appendChild(title);
+
+    // Chapter select dropdown
+    var wrap = document.createElement('div');
+    wrap.className = 'nav-select-wrap';
+    var sel = document.createElement('select');
+    sel.setAttribute('aria-label', 'Go to chapter');
+    pages.forEach(function(pg) {
+      var opt = document.createElement('option');
+      opt.value = pg[0];
+      opt.textContent = (pg[1] !== pg[2] ? pg[1] + " – " : "") + pg[2];
+      if (pg[0] === cur) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', function() { location.href = sel.value; });
+    wrap.appendChild(sel);
+    nav.appendChild(wrap);
+
+    // Prev / Next / Dark buttons
+    var btns = document.createElement('div');
+    btns.className = 'nav-btns';
+
+    if (idx > 0) {
+      var prevBtn = document.createElement('button');
+      prevBtn.textContent = '←';
+      prevBtn.title = 'Previous: ' + pages[idx-1][2];
+      prevBtn.onclick = function() { location.href = pages[idx-1][0]; };
+      btns.appendChild(prevBtn);
+    }
+    if (idx >= 0 && idx < pages.length - 1) {
+      var nextBtn = document.createElement('button');
+      nextBtn.textContent = '→';
+      nextBtn.title = 'Next: ' + pages[idx+1][2];
+      nextBtn.onclick = function() { location.href = pages[idx+1][0]; };
+      btns.appendChild(nextBtn);
+    }
+
+    var darkBtn = document.createElement('button');
+    darkBtn.id = 'dark-toggle';
+    var isDark = document.documentElement.classList.contains('dark');
+    darkBtn.textContent = isDark ? '☀' : '☽';
+    darkBtn.title = 'Toggle dark mode';
+    darkBtn.onclick = function() {
+      var on = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('cme-dark', on ? '1' : '0');
+      darkBtn.textContent = on ? '☀' : '☽';
+    };
+    btns.appendChild(darkBtn);
+
+    nav.appendChild(btns);
+    document.body.insertBefore(nav, document.body.firstChild);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildNav);
+  } else {
+    buildNav();
+  }
+})();
+</script>
+<script src="j/fontsize.js"></script>
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101178221-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101178221-1');
+</script>

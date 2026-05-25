@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epilogue and Apologue | Calculus Made Easy</title>
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 22}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h1><br>Epilogue and Apologue</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+<p>It may be confidently assumed that when this
+tractate “Calculus made Easy” falls into the hands
+of the professional mathematicians, they will (if not
+too lazy) rise up as one man, and damn it as being a
+thoroughly bad book. Of that there can be, from
+their point of view, no possible manner of doubt
+whatever. It commits several most grievous and
+deplorable errors.
+
+<p>First, it shows how ridiculously easy most of the
+operations of the calculus really are.
+
+<p>Secondly, it gives away so many trade secrets. By
+showing you that <em>what one fool can do, other fools
+can do also</em>, it lets you see that these mathematical
+swells, who pride themselves on having mastered such
+an awfully difficult subject as the calculus, have no
+such great reason to be puffed up. They like you to
+think how terribly difficult it is, and don't want that
+superstition to be rudely dissipated.
+
+<p>Thirdly, among the dreadful things they will say
+about “So Easy” is this: that there is an utter failure
+on the part of the author to demonstrate with rigid
+
+and satisfactory completeness the validity of sundry
+methods which he has presented in simple fashion,
+and has even <em>dared to use</em> in solving problems! But
+why should he not? You don't forbid the use of
+a watch to every person who does not know how to
+make one? You don't object to the musician playing
+on a violin that he has not himself constructed. You
+don't teach the rules of syntax to children until they
+have already become fluent in the <em>use</em> of speech. It
+would be equally absurd to require general rigid
+demonstrations to be expounded to beginners in the
+calculus.
+
+<p>One other thing will the professed mathematicians
+say about this thoroughly bad and vicious book: that
+the reason why it is <em>so easy</em> is because the author has
+left out all the things that are really difficult. And
+the ghastly fact about this accusation is that–<em>it
+is true!</em> That is, indeed, why the book has been
+written–written for the legion of innocents who have
+hitherto been deterred from acquiring the elements of
+the calculus by the stupid way in which its teaching
+is almost always presented. Any subject can be made
+repulsive by presenting it bristling with difficulties.
+The aim of this book is to enable beginners to learn
+its language, to acquire familiarity with its endearing
+simplicities, and to grasp its powerful methods of
+solving problems, without being compelled to toil
+through the intricate out-of-the-way (and mostly
+irrelevant) mathematical gymnastics so dear to the
+unpractical mathematician.
+
+
+<p>There are amongst young engineers a number on
+whose ears the adage that <em>what one fool can do,
+another can</em>, may fall with a familiar sound. They
+are earnestly requested not to give the author
+away, nor to tell the mathematicians what a fool
+he really is.
+
+<br>
+<hr>
+<a href="/">Main Page &uarr;</a><br>
+
+<script>
+(function() {
+  // Apply dark mode to <html> immediately — before any paint
+  if (localStorage.getItem('cme-dark') === '1') {
+    document.documentElement.classList.add('dark');
+  }
+
+  var pages = [["index.html","Home","Calculus Made Easy"],["prologue.html","Prologue","Prologue"],["1.html","I","To Deliver You From the Preliminary Terrors"],["2.html","II","On Different Degrees of Smallness"],["3.html","III","On Relative Growings"],["4.html","IV","Simplest Cases"],["5.html","V","Next Stage: What to do with Constants"],["6.html","VI","Sums, Differences, Products and Quotients"],["7.html","VII","Successive Differentiation"],["8.html","VIII","When Time Varies"],["9.html","IX","Introducing a Useful Dodge"],["10.html","X","Geometrical Meaning of Differentiation"],["11.html","XI","Maxima and Minima"],["12.html","XII","Curvature of Curves"],["13.html","XIII","Other Useful Dodges"],["14.html","XIV(a)","On true Compound Interest and the Law of Organic Growth"],["14b.html","XIV(b)","The Die-away Curve"],["15.html","XV","How to Deal with Sines and Cosines"],["16.html","XVI","Partial Differentiation"],["17.html","XVII","Integration"],["18.html","XVIII","Integrating as the Reverse of Differentiating"],["19.html","XIX","On Finding Areas by Integrating"],["20.html","XX","Dodges, Pitfalls, and Triumphs"],["21.html","XXI","Finding some Solutions"],["epilogue.html","Epilogue","Epilogue and Apologue"],["table.html","Table","Table of Standard Forms"]];
+  var cur = location.pathname.split('/').pop() || 'index.html';
+  if (!cur) cur = 'index.html';
+  var idx = pages.findIndex(function(p) { return p[0] === cur; });
+
+  function buildNav() {
+    var nav = document.createElement('div');
+    nav.id = 'cme-navbar';
+
+    // Chapter title on the left
+    var title = document.createElement('span');
+    title.className = 'nav-title';
+    title.textContent = idx >= 0 ? pages[idx][2] : 'Calculus Made Easy';
+    nav.appendChild(title);
+
+    // Chapter select dropdown
+    var wrap = document.createElement('div');
+    wrap.className = 'nav-select-wrap';
+    var sel = document.createElement('select');
+    sel.setAttribute('aria-label', 'Go to chapter');
+    pages.forEach(function(pg) {
+      var opt = document.createElement('option');
+      opt.value = pg[0];
+      opt.textContent = (pg[1] !== pg[2] ? pg[1] + " – " : "") + pg[2];
+      if (pg[0] === cur) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', function() { location.href = sel.value; });
+    wrap.appendChild(sel);
+    nav.appendChild(wrap);
+
+    // Prev / Next / Dark buttons
+    var btns = document.createElement('div');
+    btns.className = 'nav-btns';
+
+    if (idx > 0) {
+      var prevBtn = document.createElement('button');
+      prevBtn.textContent = '←';
+      prevBtn.title = 'Previous: ' + pages[idx-1][2];
+      prevBtn.onclick = function() { location.href = pages[idx-1][0]; };
+      btns.appendChild(prevBtn);
+    }
+    if (idx >= 0 && idx < pages.length - 1) {
+      var nextBtn = document.createElement('button');
+      nextBtn.textContent = '→';
+      nextBtn.title = 'Next: ' + pages[idx+1][2];
+      nextBtn.onclick = function() { location.href = pages[idx+1][0]; };
+      btns.appendChild(nextBtn);
+    }
+
+    var darkBtn = document.createElement('button');
+    darkBtn.id = 'dark-toggle';
+    var isDark = document.documentElement.classList.contains('dark');
+    darkBtn.textContent = isDark ? '☀' : '☽';
+    darkBtn.title = 'Toggle dark mode';
+    darkBtn.onclick = function() {
+      var on = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('cme-dark', on ? '1' : '0');
+      darkBtn.textContent = on ? '☀' : '☽';
+    };
+    btns.appendChild(darkBtn);
+
+    nav.appendChild(btns);
+    document.body.insertBefore(nav, document.body.firstChild);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildNav);
+  } else {
+    buildNav();
+  }
+})();
+</script>
+<script src="j/fontsize.js"></script>
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101178221-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101178221-1');
+</script>

@@ -1,0 +1,93 @@
+<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+<h3>Get Complete Step-by-Step Solutions</h3>
+<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
+
+<ul>
+    <li>For all exercises in this book.</li>
+    <li>Check your work or get unstuck.</li>
+    <li>Written by CalculusMadeEasy.org</li>
+	<li>Support this website ❤️.</li>
+	<li>229 pages</li>
+    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
+    <br>
+        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
+</ul><script>
+(function() {
+  // Apply dark mode to <html> immediately — before any paint
+  if (localStorage.getItem('cme-dark') === '1') {
+    document.documentElement.classList.add('dark');
+  }
+
+  var pages = [["index.html","Home","Calculus Made Easy"],["prologue.html","Prologue","Prologue"],["1.html","I","To Deliver You From the Preliminary Terrors"],["2.html","II","On Different Degrees of Smallness"],["3.html","III","On Relative Growings"],["4.html","IV","Simplest Cases"],["5.html","V","Next Stage: What to do with Constants"],["6.html","VI","Sums, Differences, Products and Quotients"],["7.html","VII","Successive Differentiation"],["8.html","VIII","When Time Varies"],["9.html","IX","Introducing a Useful Dodge"],["10.html","X","Geometrical Meaning of Differentiation"],["11.html","XI","Maxima and Minima"],["12.html","XII","Curvature of Curves"],["13.html","XIII","Other Useful Dodges"],["14.html","XIV(a)","On true Compound Interest and the Law of Organic Growth"],["14b.html","XIV(b)","The Die-away Curve"],["15.html","XV","How to Deal with Sines and Cosines"],["16.html","XVI","Partial Differentiation"],["17.html","XVII","Integration"],["18.html","XVIII","Integrating as the Reverse of Differentiating"],["19.html","XIX","On Finding Areas by Integrating"],["20.html","XX","Dodges, Pitfalls, and Triumphs"],["21.html","XXI","Finding some Solutions"],["epilogue.html","Epilogue","Epilogue and Apologue"],["table.html","Table","Table of Standard Forms"]];
+  var cur = location.pathname.split('/').pop() || 'index.html';
+  if (!cur) cur = 'index.html';
+  var idx = pages.findIndex(function(p) { return p[0] === cur; });
+
+  function buildNav() {
+    var nav = document.createElement('div');
+    nav.id = 'cme-navbar';
+
+    // Chapter title on the left
+    var title = document.createElement('span');
+    title.className = 'nav-title';
+    title.textContent = idx >= 0 ? pages[idx][2] : 'Calculus Made Easy';
+    nav.appendChild(title);
+
+    // Chapter select dropdown
+    var wrap = document.createElement('div');
+    wrap.className = 'nav-select-wrap';
+    var sel = document.createElement('select');
+    sel.setAttribute('aria-label', 'Go to chapter');
+    pages.forEach(function(pg) {
+      var opt = document.createElement('option');
+      opt.value = pg[0];
+      opt.textContent = (pg[1] !== pg[2] ? pg[1] + " – " : "") + pg[2];
+      if (pg[0] === cur) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', function() { location.href = sel.value; });
+    wrap.appendChild(sel);
+    nav.appendChild(wrap);
+
+    // Prev / Next / Dark buttons
+    var btns = document.createElement('div');
+    btns.className = 'nav-btns';
+
+    if (idx > 0) {
+      var prevBtn = document.createElement('button');
+      prevBtn.textContent = '←';
+      prevBtn.title = 'Previous: ' + pages[idx-1][2];
+      prevBtn.onclick = function() { location.href = pages[idx-1][0]; };
+      btns.appendChild(prevBtn);
+    }
+    if (idx >= 0 && idx < pages.length - 1) {
+      var nextBtn = document.createElement('button');
+      nextBtn.textContent = '→';
+      nextBtn.title = 'Next: ' + pages[idx+1][2];
+      nextBtn.onclick = function() { location.href = pages[idx+1][0]; };
+      btns.appendChild(nextBtn);
+    }
+
+    var darkBtn = document.createElement('button');
+    darkBtn.id = 'dark-toggle';
+    var isDark = document.documentElement.classList.contains('dark');
+    darkBtn.textContent = isDark ? '☀' : '☽';
+    darkBtn.title = 'Toggle dark mode';
+    darkBtn.onclick = function() {
+      var on = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('cme-dark', on ? '1' : '0');
+      darkBtn.textContent = on ? '☀' : '☽';
+    };
+    btns.appendChild(darkBtn);
+
+    nav.appendChild(btns);
+    document.body.insertBefore(nav, document.body.firstChild);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildNav);
+  } else {
+    buildNav();
+  }
+})();
+</script>
